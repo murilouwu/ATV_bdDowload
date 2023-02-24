@@ -17,19 +17,14 @@
     <main>
         <form method="POST" enctype="multipart/form-data">
             <h1>-Upload-</h1>
-            <label for="file">upload</label>
+            <label for="file">Enviar Arquivo</label>
             <input type="file" name="file" id="file">
-            <button name="upload">Enviar</button>
+            <button name="upload">Confimar</button>
         </form>
         <hr>
-        <h1 class="dow">-Download-</h1>
-        <h2>Sem Arquivos Para Download</h2>
-        <div class="files">
-            Nome: nameFile 
-            <a href="#" download>Download</a>
-        </div>
+        <h1 class="dow">-Downloads-</h1>
         <?php
-            /*$query = 'SELECT * FROM tb_file';
+            $query = 'SELECT * FROM tb_file';
             $res = $GLOBALS['conn']->query($query);
 
             if($res){
@@ -37,15 +32,16 @@
                 foreach($res as $row){
                     $urlNm = ''; //link do site já que é o localhost no momento não é necessário
                     echo '
-                        Nome: '.$row['nm_file'].' 
-                        <a href="'.$urlNm.'FilesSave/'.$row['nm_file'].'" download>Download</a>
+                        <div class"file">
+                            '.$row['nm_file'].' 
+                            <a href="'.$urlNm.'FilesSave/'.$row['nm_file'].'" download>Download</a>
+                        </div>
                    ';
                 }
                 echo '</div>';
             }else{
                 echo '<h2>Sem Arquivos Para Download</h2>';
             }
-            */
         ?>
     </main>
 </body>

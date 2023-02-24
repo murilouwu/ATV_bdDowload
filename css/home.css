@@ -4,7 +4,7 @@ body{
 	background-color: var(--corA);
 }
 	header{
-		background-color: var(--corA);
+		background-color: var(--Invisible);
 		width: 100vw;
 		height: 13vh;
 		border-bottom: 1vh solid var(--corC);
@@ -14,13 +14,13 @@ body{
 		margin-bottom: 6vh;
 	}
 		header p{
-			color: var(--corE);
+			color: var(--corD);
 			font-weight: bold;
 			font-size: 4vh;
 			font-family: system-ui;
 		}
 	main{
-		background-color: var(--corA);
+		background-color: var(--Invisible);
 		width: 90vw;
 		display: flex;
 		flex-direction: column;
@@ -28,17 +28,18 @@ body{
 		align-items: flex-start;
 	}
 		main form{
-			background-color: var(--corE);
-			width: 33vw;
-			height: 29vh;
+			background-color: var(--corB);
+			width: 20vw;
+			height: 23vh;
 			justify-content: space-around;
 			align-items: center;
 			display: flex;
 			flex-direction: column;
 			border-radius: 4px;
+			border: 0.2vw solid var(--corD);
 		}
 			form h1{
-				color: var(--corC);
+				color: var(--corA);
 				font-family: system-ui;
 				font-size: 6vh;
 				font-style: italic;
@@ -59,6 +60,7 @@ body{
 					width: 18vw;
 					background-color: var(--corA);
 					font-weight: 600;
+					cursor: pointer;
 				}
 			form input{
 				background-color: var(--corC);
@@ -71,31 +73,104 @@ body{
 				}
 			form button{
 				background-color: var(--corC);
+				width: 9vw;
+				height: 7vh;
+				position: absolute;
+				margin-top: 1vh;
+				margin-left: 29.5vw;
+				border: none;
+				border-radius: 0px 5px 5px 0px;
+				font-size: 4vh;
+				font-family: cursive;
+				font-weight: 100;
+				color: var(--corB);
 			}
 				form button:hover{
 					background-color: var(--corC);
+					border: 2px solid var(--corD);
+					width: 11vw;
+					color: var(--corD);
+					margin-left: 31vw;
+					cursor: pointer;
 				}
 				form button:active{
 					background-color: var(--corC);
+					width: 7vw;
+					margin-left: 27.5vw;
 				}
 		hr{
-			background-color: var(--corC);
+			background-color: var(--corA);
+			margin-top: 7vh;
+			border: none;
+			margin-bottom: 7vh;
+			width: 68vw;
+			height: 0.5vh;
+			border-radius: 2px;
+			margin-left: 9vw;
 		}
 		.dow{
-			background-color: var(--corC);
+			color: var(--corE);
+			font-style: italic;
+			font-family: system-ui;
+			font-size: 9vh;
+			margin-bottom: 2vh;
+			font-weight: bold;
 		}
 		h2{
-			background-color: var(--corC);
+			color: var(--corA);
+			font-size: 4vh;
+			font-weight: 900;
 		}
 		.files{
-			background-color: var(--corC);
+			background-color: rgb(163 163 163 / 23%);
+			width: 72vw;
+			padding: 2vh;
+			margin-top: 3vh;
+			display: flex;
+			flex-flow: wrap;
+			border-radius: 4px;
+			overflow-y: overlay;
+			height: 82vh;
+			margin-left: 7vw;
+			margin-bottom: 6vh;
 		}
+			.files .file{
+				background-color: var(--Invisible);
+				width: 13vw;
+				height: 23vh;
+				border-radius: 8px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				border: 2px solid var(--corB);
+				margin-right: 1vw;
+				color: var(--corD);
+				font-weight: bold;
+				font-family: system-ui;
+				font-size: 3vh;
+				margin-bottom: 2vh;
+			}
 			.files a{
-				background-color: var(--corC);
+				background-color: var(--corB);
+				width: 9vw;
+				text-align: center;
+				text-decoration: none;
+				padding: 0.5vh 0vw 0.5vh 0vw;
+				color: var(--corA);
+				border-radius: 6px;
+				font-size: 3vh;
+				font-family: cursive;
+				font-weight: bold;
 			}
 				.files a:hover{
-					background-color: var(--corC);
+					background-color: var(--corA);
+					cursor: pointer;
+					color: var(--corB);
+					width: 11vw;
 				}
 				.files a:active{
-					background-color: var(--corC);
+					background-color: var(--corE);
+					width: 7vw;
+					color: var(--corB);
 				}
