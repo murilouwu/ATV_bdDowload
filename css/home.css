@@ -1,8 +1,101 @@
 @import "vars.css";
 
 body{
-	background: var(--corA);
+	background-color: var(--corA);
 }
 	header{
-		
+		background-color: var(--corA);
+		width: 100vw;
+		height: 13vh;
+		border-bottom: 1vh solid var(--corC);
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		margin-bottom: 6vh;
 	}
+		header p{
+			color: var(--corE);
+			font-weight: bold;
+			font-size: 4vh;
+			font-family: system-ui;
+		}
+	main{
+		background-color: var(--corA);
+		width: 90vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+	}
+		main form{
+			background-color: var(--corE);
+			width: 33vw;
+			height: 29vh;
+			justify-content: space-around;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			border-radius: 4px;
+		}
+			form h1{
+				color: var(--corC);
+				font-family: system-ui;
+				font-size: 6vh;
+				font-style: italic;
+				font-weight: 700;
+			}
+			form label{
+				color: var(--corE);
+				width: 17vw;
+				text-align: center;
+				background-color: var(--corB);
+				padding: 1vh 0vw 1vh 0vw;
+				border-radius: 3px;
+				font-family: cursive;
+				font-size: 3vh;
+			}
+				form label:hover{
+					color: var(--corD);
+					width: 18vw;
+					background-color: var(--corA);
+					font-weight: 600;
+				}
+			form input{
+				background-color: var(--corC);
+			}
+				form input:hover{
+					background-color: var(--corC);
+				}
+				form input:focus{
+					background-color: var(--corC);
+				}
+			form button{
+				background-color: var(--corC);
+			}
+				form button:hover{
+					background-color: var(--corC);
+				}
+				form button:active{
+					background-color: var(--corC);
+				}
+		hr{
+			background-color: var(--corC);
+		}
+		.dow{
+			background-color: var(--corC);
+		}
+		h2{
+			background-color: var(--corC);
+		}
+		.files{
+			background-color: var(--corC);
+		}
+			.files a{
+				background-color: var(--corC);
+			}
+				.files a:hover{
+					background-color: var(--corC);
+				}
+				.files a:active{
+					background-color: var(--corC);
+				}

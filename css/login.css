@@ -32,7 +32,7 @@ body{
 				font-size: 9vh;
 				font-style: italic;
 				font-weight: bold;
-				font-family: Brush Script MT;
+				font-family: system-ui;
 			}
 			.input{
 				width: 56vw;
@@ -50,6 +50,7 @@ body{
 				.input:hover{
 					border-color: var(--corA);
 					border-width: 4px;
+					cursor: pointer;
 				}
 				.input:focus{
 					padding: 0vh 1vw 0vh 1vw;
@@ -64,7 +65,7 @@ body{
 				height: 10vh;
 				font-size: 5vh;
 				font-weight: bold;
-				font-family: Brush Script MT;
+				font-family: system-ui;
 				font-style: italic;
 				color: var(--corA);
 				background-color: var(--corB);
@@ -75,6 +76,7 @@ body{
 				button:hover{
 					box-shadow: 0px 0px 10px 0px var(--corB);
 					width: 19vw;
+					cursor: pointer;
 				}
 				button:active{
 					width: 13vw;
@@ -87,4 +89,5 @@ body{
 			}
 				a:hover{
 					border-bottom: 2px solid var(--corC);
+					cursor: pointer;
 				}

@@ -16,26 +16,37 @@
     </header>
     <main>
         <form method="POST" enctype="multipart/form-data">
-            <h1>Upload</h1>
-            <label for="file">Escolha o arquivo para realizar upload:</label>
-            <input type="file" name="file" id="file" class="mg">
-            <button name="upload" class="mg">Enviar</button>
-            <hr>
-            <h1>Download</h1>
-            <?php
-                $query = 'SELECT * FROM tb_file';
-                $res = $GLOBALS['conn']->query($query);
+            <h1>-Upload-</h1>
+            <label for="file">upload</label>
+            <input type="file" name="file" id="file">
+            <button name="upload">Enviar</button>
+        </form>
+        <hr>
+        <h1 class="dow">-Download-</h1>
+        <h2>Sem Arquivos Para Download</h2>
+        <div class="files">
+            Nome: nameFile 
+            <a href="#" download>Download</a>
+        </div>
+        <?php
+            /*$query = 'SELECT * FROM tb_file';
+            $res = $GLOBALS['conn']->query($query);
+
+            if($res){
+                echo '<div class="files">';
                 foreach($res as $row){
                     $urlNm = ''; //link do site já que é o localhost no momento não é necessário
                     echo '
-                    <div class="arquivos">
                         Nome: '.$row['nm_file'].' 
                         <a href="'.$urlNm.'FilesSave/'.$row['nm_file'].'" download>Download</a>
-                    </div>
-                    ';
+                   ';
                 }
-            ?>
-        </form>
+                echo '</div>';
+            }else{
+                echo '<h2>Sem Arquivos Para Download</h2>';
+            }
+            */
+        ?>
     </main>
 </body>
 </html>
