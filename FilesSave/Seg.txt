@@ -1,0 +1,1 @@
+Arquivo de segurança para manter no git, mesmo sem nenhum arquivo baixado
