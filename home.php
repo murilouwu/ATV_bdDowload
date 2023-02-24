@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <p>FTP - UPLOAD/DOWNLOAD</p>
+        <p>UPLOAD/DOWNLOAD</p>
     </header>
     <main>
         <form method="POST" enctype="multipart/form-data">
