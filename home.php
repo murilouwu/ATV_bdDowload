@@ -26,10 +26,11 @@
                 $query = 'SELECT * FROM tb_file';
                 $res = $GLOBALS['conn']->query($query);
                 foreach($res as $row){
+                    $urlNm = ''; //link do site já que é o localhost no momento não é necessário
                     echo '
                     <div class="arquivos">
                         Nome: '.$row['nm_file'].' 
-                        <a href="FilesSave/'.$row['nm_file'].'" download>Download</a>
+                        <a href="'.$urlNm.'FilesSave/'.$row['nm_file'].'" download>Download</a>
                     </div>
                     ';
                 }
