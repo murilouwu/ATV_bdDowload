@@ -32,7 +32,7 @@
                 foreach($res as $row){
                     $urlNm = ''; //link do site já que é o localhost no momento não é necessário
                     echo '
-                        <div class"file">
+                        <div class="file">
                             '.$row['nm_file'].' 
                             <a href="'.$urlNm.'FilesSave/'.$row['nm_file'].'" download>Download</a>
                         </div>
