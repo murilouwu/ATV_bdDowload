@@ -49,5 +49,6 @@
 <?php
     if(isset($_POST['upload'])){
         UpFile($_FILES['file']);
+        header("Location: home.php");
     }
 ?>
