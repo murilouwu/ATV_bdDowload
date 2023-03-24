@@ -2,7 +2,6 @@
   *{
     margin: 0px;
     padding: 0px;
-    transition: all 0.25s;
   }
   /*web-kit*/
     input[type=file]{
@@ -14,7 +13,7 @@
     }
     ::-webkit-scrollbar{
 
-      width: 8px;
+      width: 4px;
     }
 
     ::-webkit-scrollbar-thumb{
@@ -30,7 +29,11 @@
 body{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   overflow-y: overlay;
+}
+
+@font-face{
+  font-family: 'DbFont';
+  src: url('../fonts/Sayadin-sans/Saiyan-Sans.ttf') format('truetype');
 }

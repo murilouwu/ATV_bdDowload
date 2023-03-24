@@ -4,7 +4,7 @@ $db = array(
             'host'=>'localhost',
             'user'=>'root',
             'pass'=> '',
-            'nm'=>'db_file'
+            'nm'=>'db_estacionamento'
         );
 
 $conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');
@@ -13,46 +13,61 @@ function mensage($txt){
     echo '<script>alert("'.$txt.'");</script>';
 }
 
-function CadUser($nm, $mail, $pass){
-    $query = 'SELECT * FROM tb_user WHERE nm_user = "'.$nm.'" OR mail_user = "'.$mail.'"';
+function CadUser($nm, $nmC, $mail, $date, $end, $pass, $tel, $img){
+    $query = 'SELECT * FROM user WHERE nm_name = "'.$nm.'" OR mail_user = "'.$mail.'" OR nr_tel = "'.$tel.'"';
     $res = $GLOBALS['conn']->query($query);
     
     $rows = mysqli_num_rows($res);
     if($rows > 0){
-        mensage('Nome de usuário e/ou email já utilizados!');
+        mensage('Nome de usuário e/ou email e/ou telefone já utilizados!');
     }else if($rows == 0){
-        $query = 'INSERT INTO tb_user (nm_user, mail_user, pass_user) VALUES ("'.$nm.'", "'.$mail.'", "'.$pass.'")';
+        $link = UpFile($img, $nm);
+        $query = 'INSERT INTO user (nm_nome, nm_name, mail_user, img, dt_nasc, des_endereco, nr_cartão, sl_senha, nr_tel, sl_adm) 
+                            VALUES ("'.$nmC.'","'.$nm.'", "'.$mail.'", "'.$link.'","'.$date.'", "'.$end.'", "'.$cad.'","'.$pass.'", "'.$tel.'", false)';
         $res = $GLOBALS['conn']->query($query);
         if($res){
-            mensage('Cadastro realizado com sucesso! :), Faça login para entrar!');
+            mensage('Cadastro realizado com sucesso! :), seja bem vindo '.$nm);
+            Login($nm, $pass);
         }else{
             mensage('Erro ao realizar cadastro ;-;, tente novamente!');
         }
     }
 }
+function addAdm($cd, $adm){
+    $sql = 'UPDATE user SET adm = '.$adm.' WHERE cd = '.$cd;
+    $res = $GLOBALS['con']->query($sql);
+    if(!$res){
+        mensage("Erro a ADMificar user");
+    }
+}
+
+function deleteUser($cd){
+    $sql = 'DELETE FROM user WHERE cd = '.$cd;
+    $res = $GLOBALS['con']->query($sql);
+    if(!$res){
+        mensage('Erro ao Excluir');
+    }
+}
 
 function Login($nm, $pass){
-    $query = 'SELECT * FROM tb_user WHERE nm_user = "'.$nm.'" AND pass_user = "'.$pass.'"';
+    $query = 'SELECT * FROM user WHERE nm_name = "'.$nm.'" AND sl_senha = "'.$pass.'" OR mail_user = "'.$nm.'" AND sl_senha = "'.$pass.'"';
     $res = $GLOBALS['conn']->query($query);
     
     $rows = mysqli_num_rows($res);
     if($rows > 0){
-        header('Location: home.php');
+        $_SESSION['user'] = $res->fetch_object();
+        header('Location: index.php');
     }else{
-        mensage('Nome de usuário e/ou senha inválidos!! Tente novamente.');
+        mensage('Nome de usuário/email e/ou senha inválidos!! Tente novamente.');
     }
 }
 
-function UpFile($file){
+function UpFile($file, $nm){
     $dir = 'FilesSave/';
-    if(move_uploaded_file($file['tmp_name'], $dir.'/'.$file['name'])){
-        $query = 'INSERT INTO tb_file (nm_file) VALUES ("'.$file['name'].'")';
-        $res = $GLOBALS['conn']->query($query);
-        
-        if($res){
-            mensage('Upload realizado com sucesso!:)');
-        }
-    }else{
-        mensage('Erro ao realizar upload ;-;');
-    }
+    mkdir(__DIR__.'/'.$dir.'/'.$nm.'/', 0777, true);
+    
+    $linkF = $dir.'/'.$nm.'/'.$file['name'];
+    move_uploaded_file($file['tmp_name'], $linkF);
+
+    return($linkF);
 }
